@@ -59,11 +59,22 @@ ul.user-list > li > div.user-record *{
 	-webkit-box-flex : 1;
 	width : 150px;
 }
+ul.user-list > li > div.user-record div.imageBox{
+	margin-right : 1px;
+	box-flex : 0;
+	-moz-box-flex : 0;
+	-webkit-box-flex : 0;
+	width : 24px;
+}
 
 ul.user-list > li > div.user-record button.edit{
 	width : 00px;
 }
-ul.user-list > li > div.user-record button.hidden{
+ul.user-list > li > div.user-record img{
+	width : 24px;
+	height : 24px;
+}
+ul.user-list > li > div.user-record .hidden{
 	visibility : hidden;
 }
 

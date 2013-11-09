@@ -4,6 +4,7 @@
 		<meta charaset="utf-8"/>
 		<script src="lib/class/class.js"></script>
 		<script src="lib/angular/angular.js"></script>
+		<script src="lib/angular/angular-resource.js"></script>
 		<script src="userlist.js"></script>
 		<link rel="stylesheet" href="userlist.css"/>
 	</head>
@@ -31,6 +32,21 @@
 							</div>
 							<div ng-class="{'user-attr-name' : ($index == 0)}">
 								<p>{{user.mail}}</p>
+							</div>
+							<div class="imageBox">
+								<a href="{{user.googleP}}">
+									<img ng-class="{'hidden' : ($index != 0) && (user.googleP == '')}" src="images/googleplus.png"/>
+								</a>
+							</div>
+							<div class="imageBox">
+								<a href="{{user.facebook}}">
+									<img ng-class="{'hidden' : ($index != 0) && (user.facebook == '')}" src="images/facebook.png"/>
+								</a>
+							</div>
+							<div class="imageBox">
+								<a href="{{user.twitter}}">
+									<img ng-class="{'hidden' : ($index != 0) && (user.twitter == '')}" src="images/twitter.png"/>
+								</a>
 							</div>
 							<button class="edit" ng-class="{'hidden' : ($index == 0)}" ng-click="delete($index)">Delete</button>
 						</div>
