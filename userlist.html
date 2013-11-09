@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="UserListApp">
+	<head>
+		<meta charaset="utf-8"/>
+		<script src="lib/class/class.js"></script>
+		<script src="lib/angular/angular.js"></script>
+		<script src="userlist.js"></script>
+		<link rel="stylesheet" href="userlist.css"/>
+	</head>
+	<body ng-controller="UserListCtrl">
+		<div id="workspace">
+			<div id="register">
+				<form>
+					<div id="name" class ="user-attr">
+						<span class="attr-key">Name</span>
+						<input class="attr-val" type="text" ng-model="name"/>
+					</div>
+					<div id="mail" class="user-attr">
+						<span class="attr-key">Mail</span>
+						<input class="attr-val" type="email" ng-model="mail"/>
+					</div>
+					<button class="register" ng-click="add()">Register</button>
+				</form>
+			</div>
+			<div id="user-list">
+				<ul class="user-list">
+					<li ng-repeat="user in users">
+						<div class="user-record">
+							<div ng-class="{'user-attr-name' : ($index == 0)}">
+								<p>{{user.name}}</p>
+							</div>
+							<div ng-class="{'user-attr-name' : ($index == 0)}">
+								<p>{{user.mail}}</p>
+							</div>
+							<button class="edit" ng-class="{'hidden' : ($index == 0)}" ng-click="delete($index)">Delete</button>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
