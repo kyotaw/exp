@@ -1,5 +1,6 @@
-document.write('<script src="furo.js" />')
-document.write('<script src="game.js" />')
-document.write('<script src="framerate.js" />')
-document.write('<script src="graphics.js" />')
+document.write('<script type="text/javascript" src="lib/gamelib/furo.js"></script>')
+document.write('<script type="text/javascript" src="lib/gamelib/game.js"></scrupt>')
+document.write('<script type="text/javascript" src="lib/gamelib/framerate.js"></script>')
+document.write('<script type="text/javascript" src="lib/gamelib/graphics.js"></script>')
+document.write('<script type="text/javascript" src="lib/gamelib/axis.js"></script>')
 
