@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="ImageApp">
+	<head>
+		<link rel="stylesheet/less" href="images.less"/>
+		<script src="lib/class/class.js"></script>
+		<script src="lib/angular/angular.js"></script>
+		<script src="lib/jquery/jquery-1.10.2.js"></script>
+		<script src="images.js"></script>
+		<script src="lib/less/less-1.5.1.js"></script>
+	</head>
+	<body ng-controller="ImageCtrl">
+		<div id="workspace">
+			<div id="imageList">
+				<ul class="imageList">
+					<li ng-repeat="image in images">
+						<div class="imgFrame"><img src="{{image.src}}"/></div>
+					</li>
+				</ul>
+			</div>
+			<button ng-click="setUrl()">sss</button>
+			<div id="prev"></div>
+			<div id="next"/>
+		</div>
+	</body>
+</html>

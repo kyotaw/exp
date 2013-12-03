@@ -1,0 +1,45 @@
+.animation(@keyframes; @d:3s){
+	animation-name : @keyframes;
+	animation-duration : @d;
+}
+
+@keyframes blownAway {
+	from {
+		transform : rotate(0deg) skew(0deg) scale(1.0) translate(0px);
+	}
+	20% {
+		transform : rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+	}
+	to {
+		transform : rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+	}
+
+}
+
+.blownAwayAnime{
+	.animation(blownAway);
+}
+
+.imgFrame{
+	width : 30%;
+	height : 30%;
+	text-align : center;
+}
+
+img{
+	max-width : 100%;
+}
+
+
+
+
+
+.srcMix(@url) {
+	background : url(@url) top center no-repeat;
+	background-size : contain;
+}
+
+* {
+	border : 5px;
+}
+
