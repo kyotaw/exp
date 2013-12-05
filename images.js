@@ -10,15 +10,22 @@ DEMO.imageControllers = angular.module('ImageControllers', []);
 DEMO.imageControllers.controller('ImageCtrl', ['$scope', function ImageCtrl($scope){
 	$scope.images = [
 		{src : "images/image1.png"},
+		{src : "images/image2.png"},
+		{src : "images/image1.png"},
+		{src : "images/image2.png"},
+		{src : "images/image1.png"},
+		{src : "images/image2.png"},
+		{src : "images/image1.png"},
 		{src : "images/image2.png"}
 	];
+	$scope.shownImages = [0, 1, 2, 3, 4]
 	$scope.curImage = 0;
 	$scope.prev = function(){
 	}
 	$scope.next = function(){
 	}
 	$scope.setUrl = function(url){
-		$(".imgFrame").addClass("blownAwayAnime");
+		$(".imgFrame").addClass("goAwayAnime");
 	}
 }]);
 

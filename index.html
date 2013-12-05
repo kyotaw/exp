@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html ng-app="ImageApp">
 	<head>
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1"/>
+		<link rel="stylesheet/less" href="images.less"/>
 		<link rel="stylesheet" href="images.css"/>
 		<script src="lib/class/class.js"></script>
 		<script src="lib/angular/angular.js"></script>
@@ -10,13 +12,15 @@
 	</head>
 	<body ng-controller="ImageCtrl">
 		<div id="workspace">
-			<div id="imageList">
-				<ul class="imageList">
-					<li ng-repeat="image in images">
-						<div class="imgFrame"><img src="{{image.src}}"/></div>
-					</li>
-				</ul>
-			</div>
+			<ul class="imageList">
+				<li ng-repeat="i in shownImages" class="imageSlot">
+					<div class="imgFrame"
+						 ng-class="{'firstFrame':($first), 'middleFrame':($middle), 'lastFrame':($last)}"
+						 style="background-image:url('{{images[i].src}}')">
+						<!---->
+					</div>
+				</li>
+			</ul>
 			<button ng-click="setUrl()">sss</button>
 			<div id="prev"></div>
 			<div id="next"/>

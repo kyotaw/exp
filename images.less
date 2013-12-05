@@ -1,35 +1,157 @@
-.animation(@keyframes; @d:3s){
-	-webkit-animation-name : @keyframes;
-	-webkit-animation-duration : @d;
+.animation(@name; @d:3s; @timing:linear; @delay:0s; @iteration:1; @direction:normal){
+	animation : @arguments;  
+	-webkit-animation : @arguments;  
 }
 
-@-webkit-keyframes blownAway {
+.goAwayFrames {
 	from {
 		-webkit-transform : rotate(0deg) skew(0deg) scale(1.0) translate(0px);
+		transform : rotate(0deg) skew(0deg) scale(1.0) translate(0px);
 	}
 	20% {
 		-webkit-transform : rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+		transform : rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
 	}
 	to {
 		-webkit-transform : rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+		transform : rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
 	}
 }
 
-.blownAwayAnime{
-	.animation(blownAway);
+@keyframes goAwayAnime { .goAwayFrames }
+@-webkit-keyframes goAwayAnime { .goAwayFrames }
+
+.goAwayAnime {
+	.animation(goAwayAnime);
 }
 
+.size(@w; @h) {
+	width : ~"@{w}%";
+	height : ~"@{h}%";
+}
 
-.imageList {
-	li {
+.imageSlotFactory {
+	.imageSlotProps {
+		float : left;
 		list-style-type : none;
-		.imgFrame {
-			width : 30%;
-			height : 30%;
-			text-align : center;
-			.img {
-				max-width : 100%;
+	}
+}
+
+.imageFrameFactory {
+	.imageFrameProps {
+		text-align : center;
+		background-repeat : no-repeat;
+		background-size : contain;
+		background-position : center center;
+	}
+	.imageFrameAfterProps {
+		padding-top : 100%;
+		display : block;
+		content : "";
+	}
+	.middleFrameProps {
+	}
+}
+
+/*domツリー*/
+*{
+	margin : 0;
+	padding : 0;
+}
+img {
+	max-width : 100%;
+}
+
+html, body{
+	.size(100; 100);
+}
+
+.imageListFactory {
+	@margin : 20%;
+	.imageListProps {
+		display : inline-block;
+		margin-top : 20%;
+		padding-left : 10%;
+	}
+	.setSize(@w; @h) {
+		.size(@w; @h);	
+	}
+}
+
+.imageSlotFactory {
+	@colNum : 5;
+	.imageSlotProps {
+		float : left;
+		list-style-type : none;
+		margin : 0 1%;
+	}
+	.setSize(@w; @h) {
+		.size(@w / (@colNum+2); @h);
+	}
+}
+
+.imageFrameFactory {
+	.imageFrameProps {
+		background-repeat : no-repeat;
+		background-size : contain;
+		background-position : center center;
+		border : solid 3px #000000;
+	}
+	.imageFrameAfterProps {
+		padding-top : 100%;
+		display : block;
+		content : "";
+	}
+	.middleFrameProps {
+	}
+}
+
+.create() {
+	#ImageList  {
+		.imageListFactory();
+	}
+	#ImageSlot {
+		.imageSlotFactory();	
+	}
+	#ImageFrame {
+		.imageFrameFactory();
+	}
+}
+
+/*domツリー*/
+*{
+	margin : 0;
+	padding : 0;
+}
+img {
+	max-width : 100%;
+}
+
+html, body{
+	.size(100; 100);
+}
+
+#workspace {
+	.create();
+	.size(100; 100);
+	.imageList {
+		#ImageList>.setSize(100; 80);
+		#ImageList>.imageListProps();
+		.imageSlot {
+			#ImageSlot>.setSize(100; 100);
+			#ImageSlot>.imageSlotProps();
+			.imgFrame {
+				#ImageFrame>.imageFrameProps();
 			}
+			.imgFrame::after {
+				#ImageFrame>.imageFrameAfterProps();
+			}
+			.middleFrame {
+				#ImageFrame>.middleFrameProps();
+			}
+		}
+		.middleSlot {
+			#ImageSlot>.setSize(200; 100);
 		}
 	}
 }
