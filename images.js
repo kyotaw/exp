@@ -18,14 +18,18 @@ DEMO.imageControllers.controller('ImageCtrl', ['$scope', function ImageCtrl($sco
 		{src : "images/image1.png"},
 		{src : "images/image2.png"}
 	];
-	$scope.shownImages = [0, 1, 2, 3, 4]
+	$scope.shownImages = [0, 1, 2, 3, 4, 5, 6]
 	$scope.curImage = 0;
+	$scope.centerImage = Math.floor($scope.shownImages.length / 2);
 	$scope.prev = function(){
 	}
 	$scope.next = function(){
+		
 	}
 	$scope.setUrl = function(url){
-		$(".imgFrame").addClass("goAwayAnime");
+		//$(".imageSlot").addClass("goNextAnime");
+		$(".centerSlot").addClass("goFromCenterAnime");
+		//$(".centerSlot").prev().addClass("goToCenterAnime");
 	}
 }]);
 

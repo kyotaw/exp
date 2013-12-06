@@ -2,8 +2,12 @@
 <html ng-app="ImageApp">
 	<head>
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1"/>
-		<link rel="stylesheet/less" href="images.less"/>
-		<link rel="stylesheet" href="images.css"/>
+		<link rel="stylesheet/less" href="css/effects.less"/>
+		<link rel="stylesheet/less" href="css/images.less"/>
+		<link rel="stylesheet/less" href="css/main.less"/>
+		<link rel="stylesheet" href="css/effects.css"/>
+		<link rel="stylesheet" href="css/images.css"/>
+		<link rel="stylesheet" href="css/main.css"/>
 		<script src="lib/class/class.js"></script>
 		<script src="lib/angular/angular.js"></script>
 		<script src="lib/jquery/jquery-1.10.2.js"></script>
@@ -13,9 +17,10 @@
 	<body ng-controller="ImageCtrl">
 		<div id="workspace">
 			<ul class="imageList">
-				<li ng-repeat="i in shownImages" class="imageSlot">
+				<li ng-repeat-start="i in shownImages" ng-repeat-end class="imageSlot"
+					ng-class="{'firstSlot':($first), 'centerSlot':($index==centerImage), 'lastSlot':($last)}">
+					
 					<div class="imgFrame"
-						 ng-class="{'firstFrame':($first), 'middleFrame':($middle), 'lastFrame':($last)}"
 						 style="background-image:url('{{images[i].src}}')">
 						<!---->
 					</div>

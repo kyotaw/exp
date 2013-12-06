@@ -1,0 +1,2 @@
+・ng-repeatはrepeatを付けた要素は$indexスコープにはいっていない
+ng-repeat-startを指定すると$indexの値をとれる
