@@ -1,0 +1,372 @@
+.effectsFactory .layout .resetMargin {
+  margin: 0;
+  padding: 0;
+}
+#Effects .layout .resetMargin {
+  margin: 0;
+  padding: 0;
+}
+#Layout .resetMargin {
+  margin: 0;
+  padding: 0;
+}
+#Layout .resetMargin {
+  margin: 0;
+  padding: 0;
+}
+.goAwayFrames from {
+  -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+  transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+}
+.goAwayFrames 20% {
+  -webkit-transform: rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+  transform: rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+}
+.goAwayFrames to {
+  -webkit-transform: rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+  transform: rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+}
+@keyframes goAwayAnime {
+  from {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+    transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+  }
+  20% {
+    -webkit-transform: rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+    transform: rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+  }
+  to {
+    -webkit-transform: rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+    transform: rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+  }
+}
+@-webkit-keyframes goAwayAnime {
+  from {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+    transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+  }
+  20% {
+    -webkit-transform: rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+    transform: rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+  }
+  to {
+    -webkit-transform: rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+    transform: rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+  }
+}
+.goNextFrames from {
+  -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+  transform: rotate(0deg) skew(0deg) scale(1) translate(0);
+}
+.goNextFrames to {
+  -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(135%, 0);
+  transform: rotate(0deg) skew(0deg) scale(1) translate(135%, 0);
+}
+@keyframes goNextAnime {
+  from {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+    transform: rotate(0deg) skew(0deg) scale(1) translate(0);
+  }
+  to {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(135%, 0);
+    transform: rotate(0deg) skew(0deg) scale(1) translate(135%, 0);
+  }
+}
+@-webkit-keyframes goNextAnime {
+  from {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+    transform: rotate(0deg) skew(0deg) scale(1) translate(0);
+  }
+  to {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(135%, 0);
+    transform: rotate(0deg) skew(0deg) scale(1) translate(135%, 0);
+  }
+}
+.goFromCenterFrames from {
+  -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+  transform: rotate(0deg) skew(0deg) scale(1) translate(0);
+}
+.goFromCenterFrames to {
+  -webkit-transform: rotate(0deg) skew(0deg) scale(0.4) translate(210%, 0);
+  transform: rotate(0deg) skew(0deg) scale(0.4) translate(210%, 0);
+}
+@keyframes goFromCenterAnime {
+  from {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+    transform: rotate(0deg) skew(0deg) scale(1) translate(0);
+  }
+  to {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(0.4) translate(210%, 0);
+    transform: rotate(0deg) skew(0deg) scale(0.4) translate(210%, 0);
+  }
+}
+@-webkit-keyframes goFromCenterAnime {
+  from {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+    transform: rotate(0deg) skew(0deg) scale(1) translate(0);
+  }
+  to {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(0.4) translate(210%, 0);
+    transform: rotate(0deg) skew(0deg) scale(0.4) translate(210%, 0);
+  }
+}
+.goToCenterFrames from {
+  -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0x);
+  transform: rotate(0deg) skew(0deg) scale(1) translate(0);
+}
+.goToCenterFrames to {
+  -webkit-transform: rotate(0deg) skew(0deg) scale(2.5) translate(83%, 0);
+  transform: rotate(0deg) skew(0deg) scale(2.5) translate(83%, 0);
+}
+@keyframes goToCenterAnime {
+  from {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0x);
+    transform: rotate(0deg) skew(0deg) scale(1) translate(0);
+  }
+  to {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(2.5) translate(83%, 0);
+    transform: rotate(0deg) skew(0deg) scale(2.5) translate(83%, 0);
+  }
+}
+@-webkit-keyframes goToCenterAnime {
+  from {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0x);
+    transform: rotate(0deg) skew(0deg) scale(1) translate(0);
+  }
+  to {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(2.5) translate(83%, 0);
+    transform: rotate(0deg) skew(0deg) scale(2.5) translate(83%, 0);
+  }
+}
+.imageListFactory .imageListProps {
+  margin-top: 10%;
+}
+.imageSlotFactory .imageSlotProps {
+  list-style-type: none;
+  margin-left: 4%;
+}
+.imageSlotFactory .firstSlotProps {
+  display: none;
+}
+.imageSlotFactory .lastSlotProps {
+  display: none;
+}
+.imageSlotFactory .goAway {
+  animation: goAwayAnime 3s linear 0s 1 normal;
+  -webkit-animation: goAwayAnime 3s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+.imageSlotFactory .goNext {
+  animation: goNextAnime 1s linear 0s 1 normal;
+  -webkit-animation: goNextAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+.imageSlotFactory .goNextFromCenter {
+  animation: goFromCenterAnime 1s linear 0s 1 normal;
+  -webkit-animation: goFromCenterAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+.imageSlotFactory .goNextToCenter {
+  animation: goToCenterAnime 1s linear 0s 1 normal;
+  -webkit-animation: goToCenterAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+.imageSlotFactory .goPrev {
+  animation: goPrevAnime 3s linear 0s 1 normal;
+  -webkit-animation: goPrevAnime 3s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+.imageFrameFactory .imageFrameProps {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  border: solid 3px #000000;
+}
+.imageFrameFactory .imageFrameAfterProps {
+  padding-top: 100%;
+  display: block;
+  content: "";
+}
+/*モジュールをロードしてインターフェース作成*/
+#Effects .layout .resetMargin {
+  margin: 0;
+  padding: 0;
+}
+#Layout .resetMargin {
+  margin: 0;
+  padding: 0;
+}
+/*アプリ固有モジュールをロード*/
+#ImageList .imageListProps {
+  margin-top: 10%;
+}
+#ImageSlot .imageSlotProps {
+  list-style-type: none;
+  margin-left: 4%;
+}
+#ImageSlot .firstSlotProps {
+  display: none;
+}
+#ImageSlot .lastSlotProps {
+  display: none;
+}
+#ImageSlot .goAway {
+  animation: goAwayAnime 3s linear 0s 1 normal;
+  -webkit-animation: goAwayAnime 3s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+#ImageSlot .goNext {
+  animation: goNextAnime 1s linear 0s 1 normal;
+  -webkit-animation: goNextAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+#ImageSlot .goNextFromCenter {
+  animation: goFromCenterAnime 1s linear 0s 1 normal;
+  -webkit-animation: goFromCenterAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+#ImageSlot .goNextToCenter {
+  animation: goToCenterAnime 1s linear 0s 1 normal;
+  -webkit-animation: goToCenterAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+#ImageSlot .goPrev {
+  animation: goPrevAnime 3s linear 0s 1 normal;
+  -webkit-animation: goPrevAnime 3s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+#ImageFrame .imageFrameProps {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  border: solid 3px #000000;
+}
+#ImageFrame .imageFrameAfterProps {
+  padding-top: 100%;
+  display: block;
+  content: "";
+}
+/*domツリー*/
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+html #workspace,
+body #workspace {
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+html #workspace .imageList,
+body #workspace .imageList {
+  width: 100%;
+  height: 60%;
+  margin-top: 10%;
+}
+html #workspace .imageList .imageSlot,
+body #workspace .imageList .imageSlot {
+  float: left;
+  width: 11.428571428571429%;
+  height: 100%;
+  list-style-type: none;
+  margin-left: 4%;
+}
+html #workspace .imageList .imageSlot .imgFrame,
+body #workspace .imageList .imageSlot .imgFrame {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  border: solid 3px #000000;
+}
+html #workspace .imageList .imageSlot .imgFrame::after,
+body #workspace .imageList .imageSlot .imgFrame::after {
+  padding-top: 100%;
+  display: block;
+  content: "";
+}
+html #workspace .imageList .firstSlot,
+body #workspace .imageList .firstSlot {
+  display: none;
+}
+html #workspace .imageList .lastSlot,
+body #workspace .imageList .lastSlot {
+  display: none;
+}
+html #workspace .imageList .centerSlot,
+body #workspace .imageList .centerSlot {
+  float: left;
+  width: 28.571428571428573%;
+  height: 100%;
+}
+html #workspace .imageList .goAwayAnime,
+body #workspace .imageList .goAwayAnime {
+  animation: goAwayAnime 3s linear 0s 1 normal;
+  -webkit-animation: goAwayAnime 3s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+html #workspace .imageList .goNextAnime,
+body #workspace .imageList .goNextAnime {
+  animation: goNextAnime 1s linear 0s 1 normal;
+  -webkit-animation: goNextAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+html #workspace .imageList .goFromCenterAnime,
+body #workspace .imageList .goFromCenterAnime {
+  animation: goFromCenterAnime 1s linear 0s 1 normal;
+  -webkit-animation: goFromCenterAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+html #workspace .imageList .goToCenterAnime,
+body #workspace .imageList .goToCenterAnime {
+  animation: goToCenterAnime 1s linear 0s 1 normal;
+  -webkit-animation: goToCenterAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}

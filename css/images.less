@@ -1,0 +1,126 @@
+@import "effects.less";
+
+//Effectsアンロック
+#Effects {
+	.effectsFactory();
+}
+#Layout {
+	#Effects>.layout();
+}
+#Anime {
+	#Effects>.animation();
+}
+
+.goAwayFrames {
+	from {
+		-webkit-transform : rotate(0deg) skew(0deg) scale(1.0) translate(0px);
+		transform : rotate(0deg) skew(0deg) scale(1.0) translate(0px);
+	}
+	20% {
+		-webkit-transform : rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+		transform : rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+	}
+	to {
+		-webkit-transform : rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+		transform : rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+	}
+}
+
+@keyframes goAwayAnime { .goAwayFrames }
+@-webkit-keyframes goAwayAnime { .goAwayFrames }
+
+.goNextFrames {
+	from {
+		-webkit-transform : rotate(0deg) skew(0deg) scale(1.0) translate(0px);
+		transform : rotate(0deg) skew(0deg) scale(1.0) translate(0);
+	}
+	to {
+		-webkit-transform : rotate(0deg) skew(0deg) scale(1.0) translate(135%, 0);
+		transform : rotate(0deg) skew(0deg) scale(1.0) translate(135%, 0);
+	}
+}
+@keyframes goNextAnime { .goNextFrames }
+@-webkit-keyframes goNextAnime { .goNextFrames }
+
+.goFromCenterFrames {
+	from {
+		-webkit-transform : rotate(0deg) skew(0deg) scale(1.0) translate(0px);
+		transform : rotate(0deg) skew(0deg) scale(1.0) translate(0);
+	}
+	to {
+		-webkit-transform : rotate(0deg) skew(0deg) scale(0.4) translate(210%, 0);
+		transform : rotate(0deg) skew(0deg) scale(0.4) translate(210%, 0);
+	}
+}
+@keyframes goFromCenterAnime { .goFromCenterFrames }
+@-webkit-keyframes goFromCenterAnime { .goFromCenterFrames }
+
+.goToCenterFrames {
+	from {
+		-webkit-transform : rotate(0deg) skew(0deg) scale(1.0) translate(0x);
+		transform : rotate(0deg) skew(0deg) scale(1.0) translate(0);
+	}
+	to {
+		-webkit-transform : rotate(0deg) skew(0deg) scale(2.5) translate(83%, 0);
+		transform : rotate(0deg) skew(0deg) scale(2.5) translate(83%, 0);
+	}
+}
+@keyframes goToCenterAnime { .goToCenterFrames }
+@-webkit-keyframes goToCenterAnime { .goToCenterFrames }
+
+.imageListFactory {
+	@margin : 20%;
+	.imageListProps {
+		margin-top : 10%;
+	}
+	.setSize(@w; @h) {
+		#Layout>.size(@w; @h);	
+	}
+}
+
+.imageSlotFactory {
+	@colNum_ : 5;
+	.imageSlotProps {
+		list-style-type : none;
+		margin-left : 4%;
+	}
+	.firstSlotProps {
+		display : none;
+	}
+	.lastSlotProps {
+		display : none;
+	}
+	.centerSlotProps {
+	}
+	.goAway {
+		#Anime.animate(goAwayAnime);
+	}
+	.goNext {
+		#Anime.animate(goNextAnime, 1s);
+	}
+	.goNextFromCenter {
+		#Anime.animate(goFromCenterAnime, 1s);
+	}
+	.goNextToCenter {
+		#Anime.animate(goToCenterAnime, 1s);
+	}
+	.goPrev {
+		#Anime.animate(goPrevAnime);
+	}
+	.setSize(@w; @h) {
+		#Layout>.column(@colNum_+2; @w; @h);
+	}
+}
+
+.imageFrameFactory {
+	.imageFrameProps {
+		background-repeat : no-repeat;
+		background-size : contain;
+		background-position : center center;
+		border : solid 3px #000000;
+	}
+	.imageFrameAfterProps {
+		#Layout>.rectWithFixedAspect();
+	}
+}
+
