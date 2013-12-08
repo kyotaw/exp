@@ -1,0 +1,601 @@
+.unlockEffectModules .layout .resetMargin {
+  margin: 0;
+  padding: 0;
+}
+.unlockEffectModules .layout .centeringHBox {
+  display: -moz-box;
+  display: -webkit-box;
+  -moz-box-pack: center;
+  -webkit-box-pack: center;
+}
+.unlockEffectModules .layout .centeringVBox {
+  display: -moz-box;
+  display: -webkit-box;
+  -moz-box-align: center;
+  -webkit-box-align: center;
+}
+.unlockEffectModules .layout .centeringHInline {
+  text-align: center;
+}
+.unlockEffectModules .layout .centeringHBlock {
+  margin: 0 auto;
+}
+/*共通モジュールロード*/
+#Effects .layout .resetMargin {
+  margin: 0;
+  padding: 0;
+}
+#Effects .layout .centeringHBox {
+  display: -moz-box;
+  display: -webkit-box;
+  -moz-box-pack: center;
+  -webkit-box-pack: center;
+}
+#Effects .layout .centeringVBox {
+  display: -moz-box;
+  display: -webkit-box;
+  -moz-box-align: center;
+  -webkit-box-align: center;
+}
+#Effects .layout .centeringHInline {
+  text-align: center;
+}
+#Effects .layout .centeringHBlock {
+  margin: 0 auto;
+}
+#Layout .resetMargin {
+  margin: 0;
+  padding: 0;
+}
+#Layout .centeringHBox {
+  display: -moz-box;
+  display: -webkit-box;
+  -moz-box-pack: center;
+  -webkit-box-pack: center;
+}
+#Layout .centeringVBox {
+  display: -moz-box;
+  display: -webkit-box;
+  -moz-box-align: center;
+  -webkit-box-align: center;
+}
+#Layout .centeringHInline {
+  text-align: center;
+}
+#Layout .centeringHBlock {
+  margin: 0 auto;
+}
+#Layout .resetMargin {
+  margin: 0;
+  padding: 0;
+}
+#Layout .centeringHBox {
+  display: -moz-box;
+  display: -webkit-box;
+  -moz-box-pack: center;
+  -webkit-box-pack: center;
+}
+#Layout .centeringVBox {
+  display: -moz-box;
+  display: -webkit-box;
+  -moz-box-align: center;
+  -webkit-box-align: center;
+}
+#Layout .centeringHInline {
+  text-align: center;
+}
+#Layout .centeringHBlock {
+  margin: 0 auto;
+}
+.sizeMgrImpl .rootSize {
+  width: 100%;
+  height: 100%;
+}
+.sizeMgrImpl .naviSize {
+  width: 100%;
+  height: 100%;
+}
+.sizeMgrImpl .buttonSize {
+  width: 10%;
+  height: 80%;
+}
+.sizeMgrImpl .imageListSize {
+  width: 70%;
+  height: 80%;
+}
+.sizeMgrImpl .imageSlotSize {
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+.sizeMgrImpl .centerSlotSize {
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+.sizeMgrImpl .imageFrameSize {
+  width: 100%;
+  height: 100%;
+}
+.workspaceImpl .properties {
+  overflow: hidden;
+}
+.naviImpl .properties {
+  display: -moz-box;
+  display: -webkit-box;
+  -moz-box-align: center;
+  -webkit-box-align: center;
+}
+.naviImpl .naviButtonProps {
+  display: block;
+  position: absolute;
+  top: 10%;
+}
+.naviImpl .prevButtonProps {
+  left: 4%;
+}
+.naviImpl .nextButtonProps {
+  right: 4%;
+}
+.imageListImpl .properties {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+}
+.imageSlotImpl .properties {
+  list-style-type: none;
+  display: none;
+}
+.imageSlotImpl .centerSlotProps {
+  display: block;
+}
+.imageSlotImpl .goAway {
+  animation: goAwayAnime 3s linear 0s 1 normal;
+  -webkit-animation: goAwayAnime 3s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+.imageSlotImpl .goNext {
+  animation: goNextAnime 1s linear 0s 1 normal;
+  -webkit-animation: goNextAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+.imageSlotImpl .goNextFromCenter {
+  animation: goNextFromCenterAnime 1s linear 0s 1 normal;
+  -webkit-animation: goNextFromCenterAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+.imageSlotImpl .goNextToCenter {
+  animation: goNextToCenterAnime 1s linear 0s 1 normal;
+  -webkit-animation: goNextToCenterAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+.imageSlotImpl .goPrev {
+  animation: goPrevAnime 1s linear 0s 1 normal;
+  -webkit-animation: goPrevAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+.imageSlotImpl .goPrevFromCenter {
+  animation: goPrevFromCenterAnime 1s linear 0s 1 normal;
+  -webkit-animation: goPrevFromCenterAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+.imageSlotImpl .goPrevToCenter {
+  animation: goPrevToCenterAnime 1s linear 0s 1 normal;
+  -webkit-animation: goPrevToCenterAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+.imageFrameImpl .properties {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  box-shadow: 5px 5px 5px #000000;
+}
+.goNextFromCenterFrames from {
+  -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+  transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+}
+.goNextFromCenterFrames 20% {
+  -webkit-transform: rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+  transform: rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+}
+.goNextFromCenterFrames to {
+  -webkit-transform: rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+  transform: rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+}
+@keyframes goNextFromCenterAnime {
+  from {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+    transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+  }
+  20% {
+    -webkit-transform: rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+    transform: rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+  }
+  to {
+    -webkit-transform: rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+    transform: rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+  }
+}
+@-webkit-keyframes goNextFromCenterAnime {
+  from {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+    transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+  }
+  20% {
+    -webkit-transform: rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+    transform: rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+  }
+  to {
+    -webkit-transform: rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+    transform: rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+  }
+}
+.goPrevFromCenterFrames from {
+  -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+  transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+}
+.goPrevFromCenterFrames 20% {
+  -webkit-transform: rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+  transform: rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+}
+.goPrevFromCenterFrames to {
+  -webkit-transform: rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+  transform: rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+}
+@keyframes goPrevFromCenterAnime {
+  from {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+    transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+  }
+  20% {
+    -webkit-transform: rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+    transform: rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+  }
+  to {
+    -webkit-transform: rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+    transform: rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+  }
+}
+@-webkit-keyframes goPrevFromCenterAnime {
+  from {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+    transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+  }
+  20% {
+    -webkit-transform: rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+    transform: rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+  }
+  to {
+    -webkit-transform: rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+    transform: rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+  }
+}
+/*モジュールをロードしてインターフェース作成*/
+#Effects .layout .resetMargin {
+  margin: 0;
+  padding: 0;
+}
+#Effects .layout .centeringHBox {
+  display: -moz-box;
+  display: -webkit-box;
+  -moz-box-pack: center;
+  -webkit-box-pack: center;
+}
+#Effects .layout .centeringVBox {
+  display: -moz-box;
+  display: -webkit-box;
+  -moz-box-align: center;
+  -webkit-box-align: center;
+}
+#Effects .layout .centeringHInline {
+  text-align: center;
+}
+#Effects .layout .centeringHBlock {
+  margin: 0 auto;
+}
+#Layout .resetMargin {
+  margin: 0;
+  padding: 0;
+}
+#Layout .centeringHBox {
+  display: -moz-box;
+  display: -webkit-box;
+  -moz-box-pack: center;
+  -webkit-box-pack: center;
+}
+#Layout .centeringVBox {
+  display: -moz-box;
+  display: -webkit-box;
+  -moz-box-align: center;
+  -webkit-box-align: center;
+}
+#Layout .centeringHInline {
+  text-align: center;
+}
+#Layout .centeringHBlock {
+  margin: 0 auto;
+}
+/*アプリ固有モジュールをロード*/
+#SizeMgr .rootSize {
+  width: 100%;
+  height: 100%;
+}
+#SizeMgr .naviSize {
+  width: 100%;
+  height: 100%;
+}
+#SizeMgr .buttonSize {
+  width: 10%;
+  height: 80%;
+}
+#SizeMgr .imageListSize {
+  width: 70%;
+  height: 80%;
+}
+#SizeMgr .imageSlotSize {
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+#SizeMgr .centerSlotSize {
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+#SizeMgr .imageFrameSize {
+  width: 100%;
+  height: 100%;
+}
+#Workspace .properties {
+  overflow: hidden;
+}
+#Navi .properties {
+  display: -moz-box;
+  display: -webkit-box;
+  -moz-box-align: center;
+  -webkit-box-align: center;
+}
+#Navi .naviButtonProps {
+  display: block;
+  position: absolute;
+  top: 10%;
+}
+#Navi .prevButtonProps {
+  left: 4%;
+}
+#Navi .nextButtonProps {
+  right: 4%;
+}
+#ImageList .properties {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+}
+#ImageSlot .properties {
+  list-style-type: none;
+  display: none;
+}
+#ImageSlot .centerSlotProps {
+  display: block;
+}
+#ImageSlot .goAway {
+  animation: goAwayAnime 3s linear 0s 1 normal;
+  -webkit-animation: goAwayAnime 3s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+#ImageSlot .goNext {
+  animation: goNextAnime 1s linear 0s 1 normal;
+  -webkit-animation: goNextAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+#ImageSlot .goNextFromCenter {
+  animation: goNextFromCenterAnime 1s linear 0s 1 normal;
+  -webkit-animation: goNextFromCenterAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+#ImageSlot .goNextToCenter {
+  animation: goNextToCenterAnime 1s linear 0s 1 normal;
+  -webkit-animation: goNextToCenterAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+#ImageSlot .goPrev {
+  animation: goPrevAnime 1s linear 0s 1 normal;
+  -webkit-animation: goPrevAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+#ImageSlot .goPrevFromCenter {
+  animation: goPrevFromCenterAnime 1s linear 0s 1 normal;
+  -webkit-animation: goPrevFromCenterAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+#ImageSlot .goPrevToCenter {
+  animation: goPrevToCenterAnime 1s linear 0s 1 normal;
+  -webkit-animation: goPrevToCenterAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+#ImageFrame .properties {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  box-shadow: 5px 5px 5px #000000;
+}
+/*domツリー*/
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+html div.workspace,
+body div.workspace {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+html div.workspace div.navi,
+body div.workspace div.navi {
+  width: 100%;
+  height: 100%;
+  display: -moz-box;
+  display: -webkit-box;
+  -moz-box-align: center;
+  -webkit-box-align: center;
+}
+html div.workspace div.navi button.prev,
+body div.workspace div.navi button.prev {
+  width: 10%;
+  height: 80%;
+  display: block;
+  position: absolute;
+  top: 10%;
+  left: 4%;
+}
+html div.workspace div.navi button.next,
+body div.workspace div.navi button.next {
+  width: 10%;
+  height: 80%;
+  display: block;
+  position: absolute;
+  top: 10%;
+  right: 4%;
+}
+html div.workspace ul.imageList,
+body div.workspace ul.imageList {
+  width: 70%;
+  height: 80%;
+  position: absolute;
+  top: 10%;
+  left: 15%;
+}
+html div.workspace ul.imageList li.imageSlot,
+body div.workspace ul.imageList li.imageSlot {
+  float: left;
+  width: 100%;
+  height: 100%;
+  list-style-type: none;
+  display: none;
+}
+html div.workspace ul.imageList li.imageSlot div.imageFrame,
+body div.workspace ul.imageList li.imageSlot div.imageFrame {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  box-shadow: 5px 5px 5px #000000;
+}
+html div.workspace ul.imageList li.centerSlot,
+body div.workspace ul.imageList li.centerSlot {
+  float: left;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+html div.workspace ul.imageList li.goAwayAnime,
+body div.workspace ul.imageList li.goAwayAnime {
+  animation: goAwayAnime 3s linear 0s 1 normal;
+  -webkit-animation: goAwayAnime 3s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+html div.workspace ul.imageList li.goNextAnime,
+body div.workspace ul.imageList li.goNextAnime {
+  animation: goNextAnime 1s linear 0s 1 normal;
+  -webkit-animation: goNextAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+html div.workspace ul.imageList li.goNextFromCenterAnime,
+body div.workspace ul.imageList li.goNextFromCenterAnime {
+  animation: goNextFromCenterAnime 1s linear 0s 1 normal;
+  -webkit-animation: goNextFromCenterAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+html div.workspace ul.imageList li.goNextToCenterAnime,
+body div.workspace ul.imageList li.goNextToCenterAnime {
+  animation: goNextToCenterAnime 1s linear 0s 1 normal;
+  -webkit-animation: goNextToCenterAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+html div.workspace ul.imageList li.goPrevAnime,
+body div.workspace ul.imageList li.goPrevAnime {
+  animation: goPrevAnime 1s linear 0s 1 normal;
+  -webkit-animation: goPrevAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+html div.workspace ul.imageList li.goPrevFromCenterAnime,
+body div.workspace ul.imageList li.goPrevFromCenterAnime {
+  animation: goPrevFromCenterAnime 1s linear 0s 1 normal;
+  -webkit-animation: goPrevFromCenterAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+html div.workspace ul.imageList li.goPrevToCenterAnime,
+body div.workspace ul.imageList li.goPrevToCenterAnime {
+  animation: goPrevToCenterAnime 1s linear 0s 1 normal;
+  -webkit-animation: goPrevToCenterAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}

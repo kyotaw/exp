@@ -1,0 +1,150 @@
+@import "effects.less";
+
+/*共通モジュールロード*/
+#Effects {
+	.unlockEffectModules();
+}
+#Layout {
+	#Effects>.layout();
+}
+#Anime {
+	#Effects>.animation();
+}
+
+.sizeMgrImpl {
+	.rootSize {
+		#Layout>.size(100; 100);
+	}
+		.naviSize {
+			#Layout>.size(100; 100);
+		}
+			.buttonSize {
+				#Layout>.size(10; 80);
+			}
+		.imageListSize {
+			#Layout>.size(70; 80);
+		}		
+			.imageSlotSize {
+				#Layout>.column(1; 100; 100);
+			}
+			.centerSlotSize {
+				#Layout>.column(1; 100; 100);
+			}
+				.imageFrameSize {
+					#Layout>.size(100; 100);
+				}
+}
+
+.workspaceImpl {
+	.properties {
+		overflow : hidden;
+	}
+}
+
+.naviImpl {
+	.properties {
+		#Layout>.centeringVBox();
+	}
+	.naviButtonProps {
+		display : block;
+		position : absolute;
+		top : 10%;
+	}
+	.prevButtonProps {
+		left : 4%;
+	}
+	.nextButtonProps {
+		right : 4%;
+	}
+}
+
+.imageListImpl {
+	.properties {
+		position : absolute;
+		top : 10%;
+		left : 15%;
+	}
+}
+
+.imageSlotImpl {
+	.properties {
+		list-style-type : none;
+		display : none;
+	}
+	.firstSlotProps {
+	}
+	.lastSlotProps {
+	}
+	.centerSlotProps {
+		display : block;
+	}
+	.goAway {
+		#Anime.animate(goAwayAnime);
+	}
+	.goNext {
+		#Anime.animate(goNextAnime, 1s);
+	}
+	.goNextFromCenter {
+		#Anime.animate(goNextFromCenterAnime, 1s);
+	}
+	.goNextToCenter {
+		#Anime.animate(goNextToCenterAnime, 1s);
+	}
+	.goPrev {
+		#Anime.animate(goPrevAnime, 1s);
+	}
+	.goPrevFromCenter {
+		#Anime.animate(goPrevFromCenterAnime, 1s);
+	}
+	.goPrevToCenter {
+		#Anime.animate(goPrevToCenterAnime, 1s);
+	}
+	.setSize(@w; @h) {
+		#Layout>.column(@colNum_; @w; @h);
+	}
+}
+
+.imageFrameImpl {
+	.properties {
+		background-repeat : no-repeat;
+		background-size : contain;
+		background-position : center center;
+		box-shadow : 5px 5px 5px #000000;
+	}
+	.imageFrameAfterProps {
+	}
+}
+
+.goNextFromCenterFrames {
+	from {
+		-webkit-transform : rotate(0deg) skew(0deg) scale(1.0) translate(0px);
+		transform : rotate(0deg) skew(0deg) scale(1.0) translate(0px);
+	}
+	20% {
+		-webkit-transform : rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+		transform : rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+	}
+	to {
+		-webkit-transform : rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+		transform : rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+	}
+}
+@keyframes goNextFromCenterAnime { .goNextFromCenterFrames }
+@-webkit-keyframes goNextFromCenterAnime { .goNextFromCenterFrames }
+
+.goPrevFromCenterFrames {
+	from {
+		-webkit-transform : rotate(0deg) skew(0deg) scale(1.0) translate(0px);
+		transform : rotate(0deg) skew(0deg) scale(1.0) translate(0px);
+	}
+	20% {
+		-webkit-transform : rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+		transform : rotate(12deg) skew(500deg) scale(0.5) translate(0px, -199px);
+	}
+	to {
+		-webkit-transform : rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+		transform : rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
+	}
+}
+@keyframes goPrevFromCenterAnime { .goPrevFromCenterFrames }
+@-webkit-keyframes goPrevFromCenterAnime { .goPrevFromCenterFrames }

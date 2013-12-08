@@ -2,10 +2,10 @@
 <html ng-app="ImageApp">
 	<head>
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1"/>
-		<link rel="stylesheet/less" href="css/main.less"/>
-		<link rel="stylesheet" href="css/effects.css"/>
-		<link rel="stylesheet" href="css/images2.css"/>
-		<link rel="stylesheet" href="css/main.css"/>
+		<link rel="stylesheet/less" href="css/mobile.less" media="screen and (max-width:599px)"/>
+		<link rel="stylesheet/less" href="css/pc.less" media="screen and (min-width:600px)"/>
+		<link rel="stylesheet" href="css/mobile.css" media="screen and (max-width:599px)"/>
+		<link rel="stylesheet" href="css/pc.css" media="screen and (min-width:600px)"/>
 		<script src="lib/class/class.js"></script>
 		<script src="lib/angular/angular.js"></script>
 		<script src="lib/angular/angular-animate.js"></script>
@@ -16,8 +16,8 @@
 	<body ng-controller="ImageCtrl">
 		<div class="workspace">
 			<div class="navi">
-				<button class="prev" ng-click="prev()">Prev</button>
-				<button class="next" ng-click="next()">Next</button>
+				<button class="prev" ng-click="prev()"><<</button>
+				<button class="next" ng-click="next()">>></button>
 			</div>
 			<ul class="imageList">
 				<li ng-repeat-start="i in shownImages" ng-repeat-end class="imageSlot"
@@ -28,7 +28,7 @@
 					'nextCenterSlot':($index==(centerImage+1)),
 					'lastSlot':($last)}">
 					
-					<div class="imgFrame"
+					<div class="imageFrame"
 						 style="background-image:url('{{images[i].src}}')">
 						 <p>{{i}}</p>
 					</div>

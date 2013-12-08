@@ -1,11 +1,9 @@
-@import "effects.less";
-@import "images.less"; 
 
 /*モジュールをロードしてインターフェース作成*/
 .load() {
 	//Effectsアンロック
 	#Effects {
-		.effectsFactory();
+		.unlockEffectModules();
 	}
 	//Layoutモジュール
 	#Layout {
@@ -24,7 +22,7 @@
 		.workspaceImpl();
 	}
 	#Navi {
-		.naviImpl;
+		.naviImpl();
 	}
 	#ImageList  {
 		.imageListImpl();
@@ -53,8 +51,15 @@ div.workspace {
 	div.navi {
 		#SizeMgr>.naviSize();
 		#Navi>.properties();
-		button.prev, button.next {
+		button.prev {
+			#SizeMgr>.buttonSize();
 			#Navi>.naviButtonProps();
+			#Navi>.prevButtonProps();
+		}
+		button.next {
+			#SizeMgr>.buttonSize();
+			#Navi>.naviButtonProps();
+			#Navi>.nextButtonProps();
 		}
 	}
 	ul.imageList {
@@ -63,10 +68,11 @@ div.workspace {
 		li.imageSlot {
 			#SizeMgr>.imageSlotSize();
 			#ImageSlot>.properties();
-			div.imgFrame {
+			div.imageFrame {
+				#SizeMgr>.imageFrameSize();
 				#ImageFrame>.properties();
 			}
-			div.imgFrame::after {
+			div.imageFrame::after {
 				#ImageFrame>.imageFrameAfterProps();
 			}
 		}
@@ -77,7 +83,7 @@ div.workspace {
 			#ImageSlot>.lastSlotProps();
 		}
 		li.centerSlot {
-			#ImageSlot>.setSize(80; 100);
+			#SizeMgr>.centerSlotSize();
 			#ImageSlot>.centerSlotProps();
 		}
 		li.goAwayAnime {

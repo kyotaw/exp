@@ -24,24 +24,6 @@ DEMO.imageControllers.controller('ImageCtrl', ['$scope', '$animate', function Im
 	$scope.centerImage = Math.floor($scope.shownImages.length / 2);
 	
 	$scope.next = function(url){
-		$(".imageSlot").addClass("goNextAnime");
-		$(".centerSlot").addClass("goNextFromCenterAnime");
-		$(".centerSlot").prev().addClass("goNextToCenterAnime");
-
-		setTimeout(function(){
-			var first = $scope.shownImages[0] - 1;
-			if (first < 0) {
-				first = $scope.images.length - 1;
-			}
-			$scope.shownImages.pop();
-			$scope.shownImages.unshift(first);
-			$(".imageSlot").removeClass("goNextAnime");
-			$(".centerSlot").removeClass("goNextFromCenterAnime");
-			$(".centerSlot").prev().removeClass("goNextToCenterAnime");
-			$scope.$apply();	
-		},1000);
-	}
-	$scope.prev = function(){
 		$(".imageSlot").addClass("goPrevAnime");
 		$(".centerSlot").addClass("goPrevFromCenterAnime");
 		$(".centerSlot").next().addClass("goPrevToCenterAnime");
@@ -56,6 +38,24 @@ DEMO.imageControllers.controller('ImageCtrl', ['$scope', '$animate', function Im
 			$(".imageSlot").removeClass("goPrevAnime");
 			$(".centerSlot").removeClass("goPrevFromCenterAnime");
 			$(".centerSlot").next().removeClass("goPrevToCenterAnime");
+			$scope.$apply();	
+		},1000);
+	}
+	$scope.prev = function(){
+		$(".imageSlot").addClass("goNextAnime");
+		$(".centerSlot").addClass("goNextFromCenterAnime");
+		$(".centerSlot").prev().addClass("goNextToCenterAnime");
+
+		setTimeout(function(){
+			var first = $scope.shownImages[0] - 1;
+			if (first < 0) {
+				first = $scope.images.length - 1;
+			}
+			$scope.shownImages.pop();
+			$scope.shownImages.unshift(first);
+			$(".imageSlot").removeClass("goNextAnime");
+			$(".centerSlot").removeClass("goNextFromCenterAnime");
+			$(".centerSlot").prev().removeClass("goNextToCenterAnime");
 			$scope.$apply();	
 		},1000);
 	}
