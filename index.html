@@ -2,33 +2,38 @@
 <html ng-app="ImageApp">
 	<head>
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1"/>
-		<link rel="stylesheet/less" href="css/effects.less"/>
-		<link rel="stylesheet/less" href="css/images.less"/>
 		<link rel="stylesheet/less" href="css/main.less"/>
 		<link rel="stylesheet" href="css/effects.css"/>
-		<link rel="stylesheet" href="css/images.css"/>
+		<link rel="stylesheet" href="css/images2.css"/>
 		<link rel="stylesheet" href="css/main.css"/>
 		<script src="lib/class/class.js"></script>
 		<script src="lib/angular/angular.js"></script>
+		<script src="lib/angular/angular-animate.js"></script>
 		<script src="lib/jquery/jquery-1.10.2.js"></script>
 		<script src="images.js"></script>
 		<script src="lib/less/less-1.5.1.js"></script>
 	</head>
 	<body ng-controller="ImageCtrl">
-		<div id="workspace">
+		<div class="workspace">
+			<div class="navi">
+				<button class="prev" ng-click="prev()">Prev</button>
+				<button class="next" ng-click="next()">Next</button>
+			</div>
 			<ul class="imageList">
 				<li ng-repeat-start="i in shownImages" ng-repeat-end class="imageSlot"
-					ng-class="{'firstSlot':($first), 'centerSlot':($index==centerImage), 'lastSlot':($last)}">
+					ng-class="{
+					'firstSlot':($first),
+					'preCenterSlot':($index==(centerImage-1)),
+					'centerSlot':($index==centerImage),
+					'nextCenterSlot':($index==(centerImage+1)),
+					'lastSlot':($last)}">
 					
 					<div class="imgFrame"
 						 style="background-image:url('{{images[i].src}}')">
-						<!---->
+						 <p>{{i}}</p>
 					</div>
 				</li>
 			</ul>
-			<button ng-click="setUrl()">sss</button>
-			<div id="prev"></div>
-			<div id="next"/>
 		</div>
 	</body>
 </html>

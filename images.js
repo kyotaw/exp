@@ -1,14 +1,16 @@
 var DEMO = DEMO || {};
 
-
-
 //app
-DEMO.imagesApp = angular.module('ImageApp', ['ImageControllers']);
+DEMO.imagesApp = angular.module('ImageApp', ['ImageControllers', 'ngAnimate']);
 
 //controllers
 DEMO.imageControllers = angular.module('ImageControllers', []);
-DEMO.imageControllers.controller('ImageCtrl', ['$scope', function ImageCtrl($scope){
+DEMO.imageControllers.controller('ImageCtrl', ['$scope', '$animate', function ImageCtrl($scope, $animate){
 	$scope.images = [
+		{src : "images/image1.png"},
+		{src : "images/image2.png"},
+		{src : "images/image1.png"},
+		{src : "images/image2.png"},
 		{src : "images/image1.png"},
 		{src : "images/image2.png"},
 		{src : "images/image1.png"},
@@ -18,18 +20,44 @@ DEMO.imageControllers.controller('ImageCtrl', ['$scope', function ImageCtrl($sco
 		{src : "images/image1.png"},
 		{src : "images/image2.png"}
 	];
-	$scope.shownImages = [0, 1, 2, 3, 4, 5, 6]
-	$scope.curImage = 0;
+	$scope.shownImages = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 	$scope.centerImage = Math.floor($scope.shownImages.length / 2);
+	
+	$scope.next = function(url){
+		$(".imageSlot").addClass("goNextAnime");
+		$(".centerSlot").addClass("goNextFromCenterAnime");
+		$(".centerSlot").prev().addClass("goNextToCenterAnime");
+
+		setTimeout(function(){
+			var first = $scope.shownImages[0] - 1;
+			if (first < 0) {
+				first = $scope.images.length - 1;
+			}
+			$scope.shownImages.pop();
+			$scope.shownImages.unshift(first);
+			$(".imageSlot").removeClass("goNextAnime");
+			$(".centerSlot").removeClass("goNextFromCenterAnime");
+			$(".centerSlot").prev().removeClass("goNextToCenterAnime");
+			$scope.$apply();	
+		},1000);
+	}
 	$scope.prev = function(){
-	}
-	$scope.next = function(){
-		
-	}
-	$scope.setUrl = function(url){
-		//$(".imageSlot").addClass("goNextAnime");
-		$(".centerSlot").addClass("goFromCenterAnime");
-		//$(".centerSlot").prev().addClass("goToCenterAnime");
+		$(".imageSlot").addClass("goPrevAnime");
+		$(".centerSlot").addClass("goPrevFromCenterAnime");
+		$(".centerSlot").next().addClass("goPrevToCenterAnime");
+
+		setTimeout(function(){
+			var last = $scope.shownImages[$scope.shownImages.length - 1] + 1;
+			if (last >= $scope.images.length) {
+				last = 0;
+			}
+			$scope.shownImages.shift();
+			$scope.shownImages.push(last);
+			$(".imageSlot").removeClass("goPrevAnime");
+			$(".centerSlot").removeClass("goPrevFromCenterAnime");
+			$(".centerSlot").next().removeClass("goPrevToCenterAnime");
+			$scope.$apply();	
+		},1000);
 	}
 }]);
 

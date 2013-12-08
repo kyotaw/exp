@@ -18,6 +18,32 @@
 			display : block;
 			content : "";
 		}
+		.centeringHBox {
+			display : -moz-box;
+			display : -webkit-box;
+			-moz-box-pack : center;
+			-webkit-box-pack : center;
+		}
+		.centeringVBox {
+			display : -moz-box;
+			display : -webkit-box;
+			-moz-box-align : center;
+			-webkit-box-align : center;
+		}
+		.centeringHInline {
+			text-align : center;
+		}
+		.centeringHBlock {
+			margin : 0 auto;
+		}
+		.centeringHFloatList(list) {
+			position : relative;
+			left : 50%;
+		}
+		.centeringHFloatList(item) {
+			position : relative;
+			left : -50%;
+		}
 	}
 	.animation {
 		.animate(@name; @d:3s; @timing:linear; @delay:0s; @iteration:1; @direction:normal){

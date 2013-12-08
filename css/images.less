@@ -35,60 +35,130 @@
 		transform : rotate(0deg) skew(0deg) scale(1.0) translate(0);
 	}
 	to {
-		-webkit-transform : rotate(0deg) skew(0deg) scale(1.0) translate(135%, 0);
-		transform : rotate(0deg) skew(0deg) scale(1.0) translate(135%, 0);
+		-webkit-transform : rotate(0deg) skew(0deg) scale(1.0) translate(133%, 0);
+		transform : rotate(0deg) skew(0deg) scale(1.0) translate(133%, 0);
 	}
 }
 @keyframes goNextAnime { .goNextFrames }
 @-webkit-keyframes goNextAnime { .goNextFrames }
 
-.goFromCenterFrames {
+.goNextFromCenterFrames {
 	from {
 		-webkit-transform : rotate(0deg) skew(0deg) scale(1.0) translate(0px);
 		transform : rotate(0deg) skew(0deg) scale(1.0) translate(0);
 	}
 	to {
-		-webkit-transform : rotate(0deg) skew(0deg) scale(0.4) translate(210%, 0);
-		transform : rotate(0deg) skew(0deg) scale(0.4) translate(210%, 0);
+		-webkit-transform : rotate(0deg) skew(0deg) scale(0.37, 0.4) translate(220%, 0);
+		transform : rotate(0deg) skew(0deg) scale(0.37, 0.4) translate(220%, 0);
 	}
 }
-@keyframes goFromCenterAnime { .goFromCenterFrames }
-@-webkit-keyframes goFromCenterAnime { .goFromCenterFrames }
+@keyframes goNextFromCenterAnime { .goNextFromCenterFrames }
+@-webkit-keyframes goNextFromCenterAnime { .goNextFromCenterFrames }
 
-.goToCenterFrames {
+.goNextToCenterFrames {
 	from {
 		-webkit-transform : rotate(0deg) skew(0deg) scale(1.0) translate(0x);
 		transform : rotate(0deg) skew(0deg) scale(1.0) translate(0);
 	}
 	to {
-		-webkit-transform : rotate(0deg) skew(0deg) scale(2.5) translate(83%, 0);
-		transform : rotate(0deg) skew(0deg) scale(2.5) translate(83%, 0);
+		-webkit-transform : rotate(0deg) skew(0deg) scale(2.7) translate(80%, 0);
+		transform : rotate(0deg) skew(0deg) scale(2.7) translate(80%, 0);
 	}
 }
-@keyframes goToCenterAnime { .goToCenterFrames }
-@-webkit-keyframes goToCenterAnime { .goToCenterFrames }
+@keyframes goNextToCenterAnime { .goNextToCenterFrames }
+@-webkit-keyframes goNextToCenterAnime { .goNextToCenterFrames }
 
-.imageListFactory {
-	@margin : 20%;
-	.imageListProps {
-		margin-top : 10%;
+.goPrevFrames {
+	from {
+		-webkit-transform : rotate(0deg) skew(0deg) scale(1.0) translate(0px);
+		transform : rotate(0deg) skew(0deg) scale(1.0) translate(0);
 	}
-	.setSize(@w; @h) {
-		#Layout>.size(@w; @h);	
+	to {
+		-webkit-transform : rotate(0deg) skew(0deg) scale(1.0) translate(-133%, 0);
+		transform : rotate(0deg) skew(0deg) scale(1.0) translate(-133%, 0);
+	}
+}
+@keyframes goPrevAnime { .goPrevFrames }
+@-webkit-keyframes goPrevAnime { .goPrevFrames }
+
+.goPrevFromCenterFrames {
+	from {
+		-webkit-transform : rotate(0deg) skew(0deg) scale(1.0) translate(0px);
+		transform : rotate(0deg) skew(0deg) scale(1.0) translate(0);
+	}
+	to {
+		-webkit-transform : rotate(0deg) skew(0deg) scale(0.37, 0.4) translate(-220%, 0);
+		transform : rotate(0deg) skew(0deg) scale(0.37, 0.4) translate(-220%, 0);
+	}
+}
+@keyframes goPrevFromCenterAnime { .goPrevFromCenterFrames }
+@-webkit-keyframes goPrevFromCenterAnime { .goPrevFromCenterFrames }
+
+.goPrevToCenterFrames {
+	from {
+		-webkit-transform : rotate(0deg) skew(0deg) scale(1.0) translate(0x);
+		transform : rotate(0deg) skew(0deg) scale(1.0) translate(0);
+	}
+	to {
+		-webkit-transform : rotate(0deg) skew(0deg) scale(2.7) translate(-80%, 0);
+		transform : rotate(0deg) skew(0deg) scale(2.7) translate(-80%, 0);
+	}
+}
+@keyframes goPrevToCenterAnime { .goPrevToCenterFrames }
+@-webkit-keyframes goPrevToCenterAnime { .goPrevToCenterFrames }
+
+.sizeMgrImpl {
+	.rootSize {
+		#Layout>.size(100; 100);
+	}
+		.naviSize {
+			#Layout>.size(100; 20);
+		}
+		.imageListSize {
+			#Layout>.size(200; 80);
+		}
+			.imageSlotSize {
+				#Layout>.column(5; 30; 100);
+			}
+			.centerSlotSize {
+				#Layout>.column(5; 80; 100);
+			}
+}
+
+.workspaceImpl {
+	.properties {
+		overflow : hidden;
 	}
 }
 
-.imageSlotFactory {
+.naviImpl {
+	.properties {
+		#Layout>.centeringHBox();
+		#Layout>.centeringVBox();
+	}
+	.naviButtonProps {
+		display : block;
+	}
+}
+
+.imageListImpl {
+	.properties {
+		margin-top : 2%;
+		left : -32%;
+		
+		position : relative;
+	}
+}
+
+.imageSlotImpl {
 	@colNum_ : 5;
-	.imageSlotProps {
+	.properties {
 		list-style-type : none;
-		margin-left : 4%;
+		margin : 0 1%;
 	}
 	.firstSlotProps {
-		display : none;
 	}
 	.lastSlotProps {
-		display : none;
 	}
 	.centerSlotProps {
 	}
@@ -99,25 +169,31 @@
 		#Anime.animate(goNextAnime, 1s);
 	}
 	.goNextFromCenter {
-		#Anime.animate(goFromCenterAnime, 1s);
+		#Anime.animate(goNextFromCenterAnime, 1s);
 	}
 	.goNextToCenter {
-		#Anime.animate(goToCenterAnime, 1s);
+		#Anime.animate(goNextToCenterAnime, 1s);
 	}
 	.goPrev {
-		#Anime.animate(goPrevAnime);
+		#Anime.animate(goPrevAnime, 1s);
+	}
+	.goPrevFromCenter {
+		#Anime.animate(goPrevFromCenterAnime, 1s);
+	}
+	.goPrevToCenter {
+		#Anime.animate(goPrevToCenterAnime, 1s);
 	}
 	.setSize(@w; @h) {
-		#Layout>.column(@colNum_+2; @w; @h);
+		#Layout>.column(@colNum_; @w; @h);
 	}
 }
 
-.imageFrameFactory {
-	.imageFrameProps {
+.imageFrameImpl {
+	.properties {
 		background-repeat : no-repeat;
 		background-size : contain;
 		background-position : center center;
-		border : solid 3px #000000;
+		box-shadow : 5px 5px 5px #000000;
 	}
 	.imageFrameAfterProps {
 		#Layout>.rectWithFixedAspect();

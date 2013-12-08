@@ -1,5 +1,5 @@
 @import "effects.less";
-@import "images.less";
+@import "images.less"; 
 
 /*モジュールをロードしてインターフェース作成*/
 .load() {
@@ -17,15 +17,23 @@
 	}
 	
 	/*アプリ固有モジュールをロード*/
-
+	#SizeMgr {
+		.sizeMgrImpl();
+	}
+	#Workspace {
+		.workspaceImpl();
+	}
+	#Navi {
+		.naviImpl;
+	}
 	#ImageList  {
-		.imageListFactory();
+		.imageListImpl();
 	}
 	#ImageSlot {
-		.imageSlotFactory();	
+		.imageSlotImpl();	
 	}
 	#ImageFrame {
-		.imageFrameFactory();
+		.imageFrameImpl();
 	}
 }
 .load();
@@ -37,46 +45,61 @@
 }
 
 html, body{
-#Layout>.size(100; 100);
+#SizeMgr>.rootSize();
 
-#workspace {
-	#Layout>.size(80; 100);
-	overflow : hidden;
-	margin : 0 auto;
-	.imageList {
-		#ImageList>.setSize(100; 60);
-		#ImageList>.imageListProps();
-		.imageSlot {
-			#ImageSlot>.setSize(80; 100);
-			#ImageSlot>.imageSlotProps();
-			.imgFrame {
-				#ImageFrame>.imageFrameProps();
+div.workspace {
+	#SizeMgr>.rootSize();
+	#Workspace>.properties();
+	div.navi {
+		#SizeMgr>.naviSize();
+		#Navi>.properties();
+		button.prev, button.next {
+			#Navi>.naviButtonProps();
+		}
+	}
+	ul.imageList {
+		#SizeMgr>.imageListSize();
+		#ImageList>.properties();
+		li.imageSlot {
+			#SizeMgr>.imageSlotSize();
+			#ImageSlot>.properties();
+			div.imgFrame {
+				#ImageFrame>.properties();
 			}
-			.imgFrame::after {
+			div.imgFrame::after {
 				#ImageFrame>.imageFrameAfterProps();
 			}
 		}
-		.firstSlot {
+		li.firstSlot {
 			#ImageSlot>.firstSlotProps();
 		}
-		.lastSlot {
+		li.lastSlot {
 			#ImageSlot>.lastSlotProps();
 		}
-		.centerSlot {
-			#ImageSlot>.setSize(200; 100);
+		li.centerSlot {
+			#ImageSlot>.setSize(80; 100);
 			#ImageSlot>.centerSlotProps();
 		}
-		.goAwayAnime {
+		li.goAwayAnime {
 			#ImageSlot>.goAway();
 		}
-		.goNextAnime {
+		li.goNextAnime {
 			#ImageSlot>.goNext();
 		}
-		.goFromCenterAnime {
+		li.goNextFromCenterAnime {
 			#ImageSlot>.goNextFromCenter();
 		}
-		.goToCenterAnime {
+		li.goNextToCenterAnime {
 			#ImageSlot>.goNextToCenter();
+		}
+		li.goPrevAnime {
+			#ImageSlot>.goPrev();
+		}
+		li.goPrevFromCenterAnime {
+			#ImageSlot>.goPrevFromCenter();
+		}
+		li.goPrevToCenterAnime {
+			#ImageSlot>.goPrevToCenter();
 		}
 	}
 }

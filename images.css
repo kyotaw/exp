@@ -1,3 +1,15 @@
+.effectsFactory .layout .resetMargin {
+  margin: 0;
+  padding: 0;
+}
+#Effects .layout .resetMargin {
+  margin: 0;
+  padding: 0;
+}
+#Layout .resetMargin {
+  margin: 0;
+  padding: 0;
+}
 .goAwayFrames from {
   -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
   transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
@@ -38,47 +50,136 @@
     transform: rotate(40deg) skew(2000deg) scale(0) translate(0px, -37px);
   }
 }
-.goAwayAnime {
-  animation: goAwayAnime 3s linear 0s 1 normal;
-  -webkit-animation: goAwayAnime 3s linear 0s 1 normal;
+.goNextFrames from {
+  -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+  transform: rotate(0deg) skew(0deg) scale(1) translate(0);
 }
-.imageSlotFactory .imageSlotProps {
-  float: left;
-  list-style-type: none;
+.goNextFrames to {
+  -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(135%, 0);
+  transform: rotate(0deg) skew(0deg) scale(1) translate(135%, 0);
 }
-.imageFrameFactory .imageFrameProps {
-  text-align: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center center;
+@keyframes goNextAnime {
+  from {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+    transform: rotate(0deg) skew(0deg) scale(1) translate(0);
+  }
+  to {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(135%, 0);
+    transform: rotate(0deg) skew(0deg) scale(1) translate(135%, 0);
+  }
 }
-.imageFrameFactory .imageFrameAfterProps {
-  padding-top: 100%;
-  display: block;
-  content: "";
+@-webkit-keyframes goNextAnime {
+  from {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+    transform: rotate(0deg) skew(0deg) scale(1) translate(0);
+  }
+  to {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(135%, 0);
+    transform: rotate(0deg) skew(0deg) scale(1) translate(135%, 0);
+  }
 }
-/*domツリー*/
-* {
-  margin: 0;
-  padding: 0;
+.goFromCenterFrames from {
+  -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+  transform: rotate(0deg) skew(0deg) scale(1) translate(0);
 }
-img {
-  max-width: 100%;
+.goFromCenterFrames to {
+  -webkit-transform: rotate(0deg) skew(0deg) scale(0.4) translate(210%, 0);
+  transform: rotate(0deg) skew(0deg) scale(0.4) translate(210%, 0);
 }
-html,
-body {
-  width: 100%;
-  height: 100%;
+@keyframes goFromCenterAnime {
+  from {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+    transform: rotate(0deg) skew(0deg) scale(1) translate(0);
+  }
+  to {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(0.4) translate(210%, 0);
+    transform: rotate(0deg) skew(0deg) scale(0.4) translate(210%, 0);
+  }
+}
+@-webkit-keyframes goFromCenterAnime {
+  from {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0px);
+    transform: rotate(0deg) skew(0deg) scale(1) translate(0);
+  }
+  to {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(0.4) translate(210%, 0);
+    transform: rotate(0deg) skew(0deg) scale(0.4) translate(210%, 0);
+  }
+}
+.goToCenterFrames from {
+  -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0x);
+  transform: rotate(0deg) skew(0deg) scale(1) translate(0);
+}
+.goToCenterFrames to {
+  -webkit-transform: rotate(0deg) skew(0deg) scale(2.5) translate(83%, 0);
+  transform: rotate(0deg) skew(0deg) scale(2.5) translate(83%, 0);
+}
+@keyframes goToCenterAnime {
+  from {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0x);
+    transform: rotate(0deg) skew(0deg) scale(1) translate(0);
+  }
+  to {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(2.5) translate(83%, 0);
+    transform: rotate(0deg) skew(0deg) scale(2.5) translate(83%, 0);
+  }
+}
+@-webkit-keyframes goToCenterAnime {
+  from {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(1) translate(0x);
+    transform: rotate(0deg) skew(0deg) scale(1) translate(0);
+  }
+  to {
+    -webkit-transform: rotate(0deg) skew(0deg) scale(2.5) translate(83%, 0);
+    transform: rotate(0deg) skew(0deg) scale(2.5) translate(83%, 0);
+  }
 }
 .imageListFactory .imageListProps {
-  display: inline-block;
-  margin-top: 20%;
-  padding-left: 10%;
+  margin-top: 10%;
 }
 .imageSlotFactory .imageSlotProps {
-  float: left;
   list-style-type: none;
-  margin: 0 1%;
+  margin-left: 4%;
+}
+.imageSlotFactory .goAway {
+  animation: goAwayAnime 3s linear 0s 1 normal;
+  -webkit-animation: goAwayAnime 3s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+.imageSlotFactory .goNext {
+  animation: goNextAnime 1s linear 0s 1 normal;
+  -webkit-animation: goNextAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+.imageSlotFactory .goNextFromCenter {
+  animation: goFromCenterAnime 1s linear 0s 1 normal;
+  -webkit-animation: goFromCenterAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+.imageSlotFactory .goNextToCenter {
+  animation: goToCenterAnime 1s linear 0s 1 normal;
+  -webkit-animation: goToCenterAnime 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+.imageSlotFactory .goPrev {
+  animation: goPrevAnime 3s linear 0s 1 normal;
+  -webkit-animation: goPrevAnime 3s linear 0s 1 normal;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  transform-origin: top;
+  -webkit-transform-origin: top;
 }
 .imageFrameFactory .imageFrameProps {
   background-repeat: no-repeat;
@@ -90,87 +191,4 @@ body {
   padding-top: 100%;
   display: block;
   content: "";
-}
-/*domツリー*/
-* {
-  margin: 0;
-  padding: 0;
-}
-img {
-  max-width: 100%;
-}
-html,
-body {
-  width: 100%;
-  height: 100%;
-}
-#workspace {
-  width: 100%;
-  height: 100%;
-}
-#workspace #ImageList .imageListProps {
-  display: inline-block;
-  margin-top: 20%;
-  padding-left: 10%;
-}
-#workspace #ImageSlot .imageSlotProps {
-  float: left;
-  list-style-type: none;
-}
-#workspace #ImageSlot .imageSlotProps {
-  float: left;
-  list-style-type: none;
-  margin: 0 1%;
-}
-#workspace #ImageFrame .imageFrameProps {
-  text-align: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center center;
-}
-#workspace #ImageFrame .imageFrameAfterProps {
-  padding-top: 100%;
-  display: block;
-  content: "";
-}
-#workspace #ImageFrame .imageFrameProps {
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center center;
-  border: solid 3px #000000;
-}
-#workspace #ImageFrame .imageFrameAfterProps {
-  padding-top: 100%;
-  display: block;
-  content: "";
-}
-#workspace .imageList {
-  width: 100%;
-  height: 80%;
-  display: inline-block;
-  margin-top: 20%;
-  padding-left: 10%;
-}
-#workspace .imageList .imageSlot {
-  width: 14.285714285714286%;
-  height: 100%;
-  float: left;
-  list-style-type: none;
-  margin: 0 1%;
-}
-#workspace .imageList .imageSlot .imgFrame {
-  text-align: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center center;
-  border: solid 3px #000000;
-}
-#workspace .imageList .imageSlot .imgFrame::after {
-  padding-top: 100%;
-  display: block;
-  content: "";
-}
-#workspace .imageList .middleSlot {
-  width: 28.571428571428573%;
-  height: 100%;
 }
