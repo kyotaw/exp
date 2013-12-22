@@ -16,11 +16,9 @@ DEMO.imageControllers.controller('ImageCtrl', ['$scope', '$animate', function Im
 		{src : "images/image1.png"},
 		{src : "images/image2.png"},
 		{src : "images/image1.png"},
-		{src : "images/image2.png"},
-		{src : "images/image1.png"},
 		{src : "images/image2.png"}
 	];
-	$scope.shownImages = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+	$scope.shownImages = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 	$scope.centerImage = Math.floor($scope.shownImages.length / 2);
 	
 	$scope.next = function(url){
