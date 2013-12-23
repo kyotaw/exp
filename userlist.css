@@ -1,5 +1,23 @@
-body{
+body {
 	font-size : 75%;
 	font-family : 'Lucida Grande', 'Hiragino Kaku Gothic PronN', Meiyo, sans-serif;
+}
+
+.content {
+	text-align : center;
+}
+.footer {
+	text-align : center;
+}
+
+.errorMsg {
+	color : #FF0000;
+}
+
+.register {
+	margin-bottom : 30px;
+}
+.switchLang {
+	cursor : pointer;
 }
 

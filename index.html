@@ -3,50 +3,80 @@
 	<head>
 		<meta charaset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script src="lib/class/class.js"></script>
-		<script type="text/javascript" src="lib/jquery/jquery-1.10.2.js"></script>
-		<script type="text/javascript" src="lib/jquery-mobile/jquery.mobile-1.3.2.js"></script>
-		<script src="lib/angular/angular.js"></script>
-		<script src="lib/angular/angular-resource.js"></script>
-		<script src="userlist.js"></script>
-		<script src="users/users.js"></script>
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css"></link>
+		<script src="lib/jquery/jquery-1.10.2.js" data-main="load"></script>
+		<script src="lib/jquery-mobile/jquery.mobile-1.3.2.js" data-main="load"></script>
+		<script src="lib/angular/angular.js" data-main="load"></script>
+		<script src="lib/angular/angular-resource.js" data-main="load"></script>
+		<script src="lib/class/class.js" data-main="load"></script>
+		<script src="lib/i18next/i18next-1.7.1.js" data-main="load"></script>
+		<script src="locales/resource.js" data-main="load"></script>
+		<script src="users/users.js" data-main="load"></script>
+		<script src="translate.js" data-main="load"></script>
+		<script src="services.js" data-main="load"></script>
+		<script src="models.js" data-main="load"></script>
+		<script src="controllers.js" data-main="load"></script>
+		<script src="userlist.js" data-main="load"></script>
+		<link rel="stylesheet" href="lib/jquery-mobile/jquery.mobile-1.3.2.min.css"></link>
 		<link rel="stylesheet" href="userlist.css"/>
 	</head>
 	<body ng-controller="UserListCtrl">
 		<div id="namelist" data-role="page">
 			<div data-role="header">
-				<h1>Select User</h1>
+				<h1 ng-i18next>selectUser</h1>
 			</div>
-			<div data-role="content">
+			<div data-role="content" class="content">
+				<div class="register">
+					<form>
+						<div>
+							<span ng-i18next>userName</span>
+							<input type="text" ng-model="tmpUser.profile.name"/>
+							<p class="errorMsg" ng-hide="tmpUser.validate(['name'])" ng-i18next="{{tmpUser.errors['name']}}"></p>
+						</div>
+						<div>
+							<span ng-i18next>mail</span>
+							<input type="email" ng-model="tmpUser.profile.mail"/>
+						</div>
+						<a data-role="button" ng-click="add()" ng-i18next>register</a>
+					</form>
+				</div>
 				<ul class="user-list" data-role="listview">
 					<li ng-repeat="user in users">
 						<a href="#profile" data-transition="slide" ng-click="showProfile($index)">
 							<span>{{user.profile.name}}</span>
 						</a>
+						<a data-icon="delete"  ng-click="delete($index)">delete</a>
 					</li>
 				</ul>
 			</div>
-			<div data-role="footer"/>
-				<a data-role="button" data-icon="delete" ng-click="clear()"><h1>Clear</h1></a>
+			<div data-role="footer" class="footer"/>
+				<p class ="switchLang" ng-click="switchLang()" ng-i18next>switchLang</p>
 			</div>
 		</div>
 		<div id="profile" data-role="page">
 			<div data-role="header">
-				<a href="#" data-icon="back" data-rel="back" data-transition="slide">Back</a>
-				<h1>Profile</h1>
+				<a href="#" data-icon="back" data-rel="back" data-transition="slide" ng-i18next>back</a>
+				<h1 ng-i18next>profile</h1>
 			</div>
-			<div data-role="content">
+			<div data-role="content" class="content">
 				<img src="{{users[curUser].profile.image}}"/>
 				<a href="{{users[curUser].profile.url}}"><img src="images/googleplus.png"/></a>
-				<form>name:<input type="text" ng-model="users[curUser].profile.name"/></form>
-				<p>mail:{{users[curUser].profile.mail}}</p>
-				<p>about:{{users[curUser].profile.about}}</p>
+				<form>
+					<span ng-i18next>userName</span>
+					: <input type="text" class="input" ng-model="users[curUser].profile.name"/>
+					<p class="errorMsg" ng-hide="users[curUser].validate(['name'])" ng-i18next="{{users[curUser].errors['name']}}"></p>
+				</form>
+				<div>
+					<span ng-i18next>mail</span><span> : {{users[curUser].profile.mail}}</span>
+				</div>
+				<div>
+					<span ng-i18next>about</span><span> : {{users[curUser].profile.about}}</span>
+				</div>
 			</div>
-			<div data-role="footer">
-				<a data-role="button" data-icon="arrow-l" ng-click="prev()"><h1>Prev</h1></a>
-				<a data-role="button" data-icon="refresh" ng-click="refresh()"><h1>Refresh</h1></a>
-				<a data-role="button" data-icon="arrow-r" ng-click="next()"><h1>Next</h1></a>
+			<div data-role="footer" class="footer">
+				<a data-role="button" data-icon="arrow-l" ng-click="prev()"><h1 ng-i18next>prev</h1></a>
+				<a data-role="button" data-icon="refresh" ng-click="refresh()"><h1 ng-i18next>refresh</h1></a>
+				<a data-role="button" data-icon="arrow-r" ng-click="next()"><h1 ng-i18next>next</h1></a>
+				<p class ="switchLang" ng-click="switchLang()" ng-i18next>switchLang</p>
 			</div>
 		</div>
 	</body>
