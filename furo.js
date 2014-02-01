@@ -1,2 +1,0 @@
-//namespace object
-var FURO = {};
