@@ -43,3 +43,46 @@ MLG.Utility.clone = function(node, ancestors){
 	}
 	return clone.get(0);
 }
+
+MLG.Utility.getNodePath = function(node){
+	var path = '';
+	var index = 0;
+	var child = node;
+	var parent = node.parentNode;
+	while ((parent != null) && (parent != undefined)) {
+		index = $.inArray(child, parent.childNodes);
+		path = '/*[' + index + ']' + path;
+		child = parent;
+		parent = child.parentNode;
+	}
+	return path;
+}
+
+MLG.Utility.getNode = function(path){
+	if (path.length == 0) {
+		return null;
+	}
+	var node = null;
+	if (path[0] === '/') {
+		node = document;
+	}
+	var tokens = path.split('/')
+	for (var i = 0; i < tokens.length; ++i) {
+		if (tokens[i].length > 0) {
+			var index = '';
+			var token = tokens[i];
+			var inIndex = false;
+			for (var j = 0; j < token.length; ++j) {
+				if (token[j] == ']') {
+					break;
+				} else if (token[j] == '[') {
+					inIndex = true;
+				} else if (inIndex) {
+					index += token[j];
+				}
+			}
+			node = node.childNodes[index];
+		}
+	}
+	return node;
+}

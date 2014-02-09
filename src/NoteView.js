@@ -24,9 +24,13 @@ MLG.NoteView = (function(){
 			$('body').append(tag);
 			_activeNotes[note.id] = tag;
 		},
-		destroy : function(id){
-			_activeNotes[id].remove();
+		destroy : function(note){
+			_activeNotes[note.id].remove();
 			delete _activeNotes[id];
+		},
+		update : function(note){
+			var noteTag = _activeNotes[note.id];
+			noteTag.css({'left':note.left + 'px', 'top':note.top + 'px'});
 		}
 	}
 	
