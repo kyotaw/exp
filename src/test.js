@@ -1,9 +1,8 @@
 Monologue = (function(){
-	_monologueCtrl = null;
+	var _controller = MLG.MonologueController;
 
 	function createLogueBox(evt){
-		_monologueCtrl = new MonologueController();
-		_monologueCtrl.show(evt);
+		_controller.create(evt);
 	}
 
 	return {
@@ -12,8 +11,7 @@ Monologue = (function(){
 		},
 		end : function(){
 			$("body").unbind("mouseup", createLogueBox);
-			_monologueCtrl.hide();
-			_monologueCtrl = null;
+			_controller.destroy();
 		}
 	}
 

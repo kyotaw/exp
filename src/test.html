@@ -3,18 +3,166 @@
 	<head>
 		<script src="../lib/jquery/jquery-1.10.2.js"></script>
 		<script src="init.js"></script>
-		<script src="LogueBox.js"></script>
+		<script src="utility.js"></script>
+		<script src="LogueBoxView.js"></script>
+		<script src="Note.js"></script>
+		<script src="NoteView.js"></script>
 		<script src="MonologueController.js"></script>
 		<script src="test.js"></script>
 		<link rel="stylesheet" href="test.css"/>
 	</head>
 	<body>
 		<div class="wrap">
-			<div class="text">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+			<div class="text"><span>span1</span><span>span2</span><span>span3</span></div>
+			<h1>CSS 背景色の指定</h1>
+			<p>特定の要素やクラスの背景色を指定します。</p>
+			<button id="start" onclick="Monologue.begin()" style="top:300px;">Start</button>
+
+			詳しい説明は<a href="back_color.html">こちら</a>。
+			<hr>
+			<h2>ページ全体の背景色を変える</h2>
+			<p>次のソースで、<a href="bcolor_sample2.html">このように表示される</a>。</p>
+			<pre>
+&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;<br>&quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt;ページタイトル&lt;/title&gt;
+	<strong>&lt;style type=&quot;text/css&quot;&gt;
+	&lt;!--
+	body {
+	background-color: red;
+	}
+	--&gt;
+	&lt;/style&gt;</strong>
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+			<button id="start" onclick="Monologue.begin()" style="top:300px;">Start</button>
+			<hr>
+			<h2>特定の要素やクラス名・ID名の背景色指定</h2>
+			<p>次のソースで、<a href="bcolor_sample3.html">このように表示される</a>。</p>
+			<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd"&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+	&lt;title&gt;ページタイトル&lt;/title&gt;
+<strong>	&lt;style type="text/css"&gt;
+	&lt;!--
+	p {
+		background-color: #CC99CC;
+	}
+	h1 {
+		background-color: #CC9999;
+	}
+	.test {
+		background-color: #CCCC99;
+	}
+	#main {
+		background-color: #FF9999;
+	}
+	--&gt;
+	&lt;/style&gt;</strong>
+&lt;/head&gt;
+
+&lt;body&gt;
+<strong>&lt;h1&gt;</strong>h1要素の背景色に#cc9999を指定&lt;/h1&gt;
+<strong>&lt;p&gt;</strong>要素の背景色に#cc99ccを指定&lt;/p&gt;
+&lt;div <strong>class="test"</strong>&gt;
+クラス名testの背景色に#cccc99を指定&lt;/div&gt;
+&lt;div <strong>id="main"</strong>&gt;
+id名mainの背景色を #ff9999を指定&lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre>
+			
+			<H1>だだもれ</H1>
+
+			<H2><A name="08" href="diary1402.html#08">2014年02月08日</A></H2>
+			<P><A name="08p1" href="diary1402.html#08p1">．</A>
+			本を5冊もらった。少しマシな状態になったら読もう。電車でだな。
+			<P><A name="08p2" href="diary1402.html#08p2">．</A>
+			久しぶりにコード書いてるが、数日で片づけたい。
+			真面目にやるとキリがないので、いかに重要な所に集中してやれるかを考える。
+			<P><A name="08p3" href="diary1402.html#08p3">．</A>
+			土日で確定申告片づけないとなあ、と思っていたが、
+			締切はもう少し先なので、他にやる事があれば来週でもいいな。
+			<P><A name="08p4" href="diary1402.html#08p4">．</A>
+			何もやることなかったのに、確定申告しなかった。全部雪のせいだな。
+			<P><A name="08p5" href="diary1402.html#08p5">．</A>
+			「おとうさんとシノンちゃんは頭が小さいねえ。(自分の髪の毛をわしわししながら)
+			これくらいあったらいいのにねえ」。毛が少ないという意味か。くそう。
+			<P><A name="08p6" href="diary1402.html#08p6">．</A>
+			技術書は細分化されている上に、古くなりやすい。これで商売するのは厳しい。
+			しかしプログラミングを仕事に使う人間の数自体は多く、
+			しかも教え方が確立してないせいか、まともにできない人が多すぎる。
+			であれば、細分化されておらず、古くもならない分野で
+			プログラミング本を書いて、その出来が良ければ、
+			商売として成り立つはずだ。
+			テトリス本はそういう考えで書いて、
+			さんざん不安にさいなまれはしたものの、
+			一応失敗ではないレベルに売れた。
+			次もおおよそ同じ戦略で行く。
+			基礎教養とみなされていてできて当然という風潮があり、
+			実際書くコードの品質に大きく影響するのに、ロクにできない人が多い、
+			というのがアルゴリズムやその周辺のスキルだ。
+			内容に関しては、初心者向けに絞ることを徹底することでかえって
+			玄人にも売れるものにする、という逆説的なやり方を目指す。
+			玄人に対して「あんたらは客じゃない。来るな」とはっきり言う。
+			結局、その方が玄人も買ってくれる気がする。
+			なぜなら、初心者向けであればあるほど
+			専門用語に頼れないために、日常語で概念の本質を説明する
+			必要に迫られるからだ。それがかえって玄人にとっては面白く、
+			また、必要でもある、ということはありうる。
+			玄人は専門用語だけで物事を理解した気になる罠に落ちやすく、
+			しかも、その罠に落ちていても仕事にはなることが多い。
+			それゆえに本質を捉えていないことに気づかないままになりやすく、
+			長い目で見れば自分のスキルの成長を大きく妨げることにもなる。
+			自分が身につけたスキルを見直すチャンスにもなるだろう。
+			そんな本にしたい。
+			<P><A name="08p7" href="diary1402.html#08p7">．</A>
+			夜会社。3時間くらい。そこそこ進んだ。明日と、もう一日あれば、
+			一応の目的は達するだろう。
+
+			<H2><A name="07" href="diary1402.html#07">2014年02月07日</A></H2>
+			<P><A name="07p1" href="diary1402.html#07p1">．</A>
+			縄文人はドングリとかが主食だったと「物語食の文化」にある。
+			ドングリは澱粉系のナッツなので澱粉が多く、
+			縄文人は他の地域より虫歯が多かった、というのはまた別ので読んだな。
+			<P><A name="07p2" href="diary1402.html#07p2">．</A>
+			twitterなりで「誰誰に投票してください」って書くのは
+			オーケーになったんだっけか？候補者本人がやるのは良くなったが、
+			無関係な人もオーケーなんだっけ？
+
+			<HR>
+
+			<P>
+			<A href="diary1402.html#06">日記の続きへ</A>
+			|
+			<A href="../">トップへもどる</A>
+			</P>
+			<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-45705746-1', 'sannet.ne.jp');
+  ga('send', 'pageview');
+
+</script>
+
+<HR>
 			<button id="start" onclick="Monologue.begin()" style="top:300px;">Start</button>
 			<button id="stop" onclick="Monologue.end()" style="top:300px;">Stop</button>
 			<button id="pause" onclick="pause()" style="top:300px;">Pause</button>
 			<div id="frameRate" style="top:350px;">FrameRate: </div>
+
+			<svg><line r="50" cx="50" cy ="50" fill="green"></svg>
 	</div>
 
 	</body>
