@@ -1,0 +1,7 @@
+testdata/
+data/
+*.conn
+*.vocab
+*.pyc
+*.test.py
+

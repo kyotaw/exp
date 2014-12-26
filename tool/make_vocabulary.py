@@ -2,11 +2,14 @@
 
 from nlang.corpus.reader.chasen import *
 from nlang.base.data.trie import *
-from nlang.corpus.analyzer.connectivity import *
+from nlang.corpus.analyzer.vocabulary_analyzer import VocabularyAnalyzer
 import re, pprint
 import sys
+import datetime
+import threading
 
 if len(sys.argv) < 3:
+	print('usage make_vovabulary_table.py baseDir fileNamePattern outFileName')
 	quit()
 
 baseDir = sys.argv[1]
@@ -16,28 +19,41 @@ if len(sys.argv) > 3:
 	out_file = sys.argv[3]
 out_file += '.vocab'
 
-#語彙を保存
+def analyze_func(analyzer, words):
+	analyzer.analyze(words)
 
-trie = Trie()
-for dirPath, subDirs, fileNames in os.walk(baseDir):
-	file_list = glob.glob(os.path.expanduser(dirPath) + '/' + pattern)
+def vocab_func(vocab, words):
+	for word in tagged:
+		if word[1]:
+			vocab.insert(word[1], word)
+
+start = datetime.datetime.now()
+
+vocab = Trie()
+analyzer = VocabularyAnalyzer()
+for dir_path, sub_dirs, file_names in os.walk(baseDir):
+	file_list = glob.glob(os.path.expanduser(dir_path) + '/' + pattern)
 	for file in file_list:
+		print('analyzing ' + file)
 		r = ChasenCorpusReader(file, '', 'utf-8')
 		tagged = r.tagged_words()
-		for word in tagged:
-			if word[1]:
-				trie.insert(word[1], word)
+		analyze_thread = threading.Thread(target=analyze_func, args=(analyzer, tagged))
+		analyze_thread.start()
+		vocab_thread = threading.Thread(target=vocab_func, args=(vocab, tagged))
+		vocab_thread.start()
+		analyze_thread.join()
+		vocab_thread.join()
 
-voc = trie.dump()
 with open(out_file, 'wb') as f:
-	for v in voc:
+	for tagged_word in vocab.dump():
 		line = u''
-		for t in v:
-			if line:
-				line = line + u'\t'
-			line = line + t
-
-		line = line + u'\n'
+		line += tagged_word[0] + u'\t' #lemmma
+		line += tagged_word[1] + u'\t' #pron
+		line += tagged_word[2] + u'\t' #pos
+		line += str(round(analyzer.probability(tagged_word[0], tagged_word[2]), 6)) #probability
+		line += u'\n'
 		f.write(line.encode('utf-8'))
 
+time = datetime.datetime.now() - start
+print('completed! time : ' + str(time.seconds) + ' sec')
 
