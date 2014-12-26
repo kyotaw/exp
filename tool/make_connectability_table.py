@@ -3,6 +3,7 @@
 from nlang.corpus.reader.chasen import *
 from nlang.base.data.trie import *
 from nlang.corpus.analyzer.connectivity_analyzer import ConnectivityAnalyzer
+from nlang.tool.cost_calculator import calculate_cost
 import re, pprint
 import sys
 import glob
@@ -51,7 +52,7 @@ with open(out_file, 'wb') as f:
 		for pos, connects in analyzer.connect_table.items():
 			row = pos
 			for i, val in enumerate(connects):
-				row += '\t' + val + ':' + str(round(analyzer.probability(pos, val), 3))
+				row += '\t' + val + ':' + str(calculate_cost(analyzer.probability(pos, val)))
 			row += '\n'
 			f.write(row.encode('utf-8'))
 

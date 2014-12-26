@@ -3,6 +3,7 @@
 from nlang.corpus.reader.chasen import *
 from nlang.base.data.trie import *
 from nlang.corpus.analyzer.vocabulary_analyzer import VocabularyAnalyzer
+from nlang.tool.cost_calculator import calculate_cost
 import re, pprint
 import sys
 import datetime
@@ -50,7 +51,7 @@ with open(out_file, 'wb') as f:
 		line += tagged_word[0] + u'\t' #lemmma
 		line += tagged_word[1] + u'\t' #pron
 		line += tagged_word[2] + u'\t' #pos
-		line += str(round(analyzer.probability(tagged_word[0], tagged_word[2]), 6)) #probability
+		line += str(calculate_cost(analyzer.probability(tagged_word[0], tagged_word[2]))) #probability
 		line += u'\n'
 		f.write(line.encode('utf-8'))
 
