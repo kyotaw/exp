@@ -9,6 +9,7 @@ class ConnectivityAnalyzer:
 		sentence = []
 		for word in tagged_words:
 			if word[2] == 'SY-PE':
+				sentence.append(word[2])
 				self.__analyze(sentence)
 				del sentence[:]
 			else:

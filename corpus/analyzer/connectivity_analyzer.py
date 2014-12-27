@@ -7,11 +7,11 @@ class ConnectivityAnalyzer:
 		self.connect_table = {}
 		self.pos_count = {}
 		self.bigram_count = Trie()
-	
+
 	def analyze(self, tagged_words):
 		sentence = []
 		for word in tagged_words:
-			if word[2] == 'SY-PE':
+			if word[2] == 'SY-PE' or word[2] == 'EOS':
 				self.__analyze(sentence)
 				del sentence[:]
 			else:
@@ -25,24 +25,30 @@ class ConnectivityAnalyzer:
 	def __analyze(self, sentence):
 		cur_left = u'BOS'
 		for right_pos in sentence:
-			if cur_left not in self.connect_table:
-				self.connect_table[cur_left] = []
-			if right_pos not in self.connect_table[cur_left]:
-				self.connect_table[cur_left].append(right_pos)
+			self.__add_connectable_pos(cur_left, right_pos)
 			self.bigram_count.insert(cur_left, right_pos)
-		
-			if cur_left in self.pos_count:
-				self.pos_count[cur_left] += 1
-			else:
-				self.pos_count[cur_left] = 1
-
+			self.__add_pos_count(cur_left)
 			cur_left = right_pos
-		if cur_left not in self.connect_table:
-			self.connect_table[cur_left] = []
-		if 'EOS' not in self.connect_table[cur_left]:
-			self.connect_table[cur_left].append('EOS')
+
+		self.__add_connectable_pos(cur_left, 'EOS')
+		self.__add_connectable_pos(cur_left, 'SY-PE')
 		self.bigram_count.insert(cur_left, 'EOS')
-		if cur_left in self.pos_count:
-			self.pos_count[cur_left] += 1
+		self.bigram_count.insert(cur_left, 'SY-PE')
+		self.__add_pos_count(cur_left)
+		
+		self.__add_connectable_pos('SY-PE', 'EOS')
+		self.bigram_count.insert('SY-PE', 'EOS')
+		self.__add_pos_count('SY-PE')
+
+	def __add_pos_count(self, pos):
+		if pos in self.pos_count:
+			self.pos_count[pos] += 1
 		else:
-			self.pos_count[cur_left] = 1
+			self.pos_count[pos] = 1
+	
+	def __add_connectable_pos(self, left_pos, right_pos):
+		if left_pos not in self.connect_table:
+			self.connect_table[left_pos] = []
+		if right_pos not in self.connect_table[left_pos]:
+			self.connect_table[left_pos].append(right_pos)
+
